@@ -1,0 +1,53 @@
+.intro {
+  margin-top: 60px;
+  @include d(m) {
+    margin-top: 10px;
+  }
+}
+.logo {
+  margin-bottom: 60px;
+}
+.intro-info {
+  border-right: 2px solid $cinza;
+  max-width: 320px;
+  p {
+    padding-top: 10px;
+  }
+  p:first-child {
+    border-bottom: 2px solid $cinza;
+    padding-bottom: 10px;
+  }
+}
+.intro-telefone {
+  color: $bege-escuro;
+  &::after {
+    content: "////";
+    display: block;
+    margin: 0 auto;
+    margin-top: 80px;
+    font-size: 180px;
+    color: $cinza;
+    letter-spacing: -50px;
+    @include d(t) {
+      margin-top: 40px;
+      font-size: 80px;
+      letter-spacing: 0px;
+    }
+    @include d(m) {
+      display: none;
+    }
+  }
+}  
+
+.aberto {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: $verde;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.intro-foto {
+  border: 10px solid $color-border;
+}

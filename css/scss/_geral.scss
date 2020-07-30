@@ -1,0 +1,44 @@
+img {
+  display: block;
+  max-width: 100%;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  background: $color-background;
+  border: 10px solid $color-border;
+  color: $cinza;
+  @include d(m) {
+    border: none;
+  }
+}
+
+.titulo {
+  @include tipo-1(18);
+  text-transform: uppercase;
+  display: flex;
+  &::after {
+    content: "";
+    display: block;
+    background: $cinza;
+    width: 70%;
+    height: 2px;
+    margin-top: 13px;
+    margin-left: 5px;
+    @include d(m) {
+      width: 50%;
+    };
+  }
+}
+
+p {
+  @include tipo-1(18)
+}

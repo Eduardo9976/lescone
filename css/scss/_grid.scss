@@ -1,0 +1,113 @@
+//Variaveis do grid
+$desktop: 1200px;
+$tablet: 760px;
+$mobile: 480px;
+$gap: 20 ;
+@mixin collumn($col) {
+  @if $col == 1 {
+    grid-column: 1;
+  }
+  @if $col == 2 {
+    grid-column: 2;
+  }
+  @if $col == 3 {
+    grid-column: 3;
+  }
+  @if $col == 4 {
+    grid-column: 4;
+  }
+  @if $col == f {
+    grid-column: 2 / -2;
+  }
+}
+
+
+//mixins de media-querie
+
+@mixin d($size) {
+  @if $size == d {
+    @media screen  and (min-width: #{$desktop} ) {
+      @content;
+    }
+  } @else if $size == t {
+    @media screen  and (min-width: #{$tablet} ) and (max-width: #{$desktop - 1}) {
+      @content;
+    }
+  } @else if $size == m {
+    @media screen  and (max-width: #{$tablet - 1}) {
+      @content;
+    }
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr 3fr 1fr;
+  gap: $gap + px;
+  @include d(t) {
+    grid-template-columns: 1fr 2fr;
+    gap: #{$gap - 5 + px};
+  };
+  @include d(m) {
+    grid-template-columns: 1fr;
+    gap: #{$gap - 5 + px};
+  };
+}
+
+.col-2 {
+  @include collumn(2);
+  @include d(t) {
+    grid-column: 1;
+  }
+  @include d(m) {
+    grid-column: 1;
+  }
+}
+
+.col-3 {
+  @include collumn(3);
+  @include d(t) {
+    grid-column: 2;
+  }
+  @include d(m) {
+    grid-column: 1;
+  }
+}
+footer {
+  @include collumn(f);
+  @include d(t) {
+    grid-column: 1 / -1;
+  }
+  @include d(m) {
+    grid-column: 1;
+  }
+}
+
+//formulario de contato
+.info-contato {
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2%;
+  @include d(m) {
+    display: flex;
+    flex-direction: column;
+  }
+  .email-label, #email {
+    grid-column: 1;
+  }
+  .tel-label, #telefone{
+    grid-column: 2;
+  }
+  label {
+    grid-row: 1;
+  }
+  input {
+    grid-row: 2;
+  } 
+}
+
+
+

@@ -1,0 +1,46 @@
+.menu {
+  margin-top: 120px;
+  @include d(m) {
+    margin-top: 30px;
+  }
+}  
+
+.menu-item {
+  position: relative;
+  margin-bottom: 60px;
+  h2 {
+    @include tipo-2(24);
+    margin-bottom: 1em;
+  }
+  li {
+    @include tipo-1(18);
+    line-height: em(35,18);
+    span {
+      font-family: $fonte-2;
+      color: $bege-escuro;
+      display: inline-block;
+      width: 70px;
+      text-align: right;
+      margin-left: -80px;
+      @include d(m) {
+        margin-left: 0px;
+      }
+    }
+  }
+  img {
+    border-radius: 50%;
+    overflow: hidden;
+    border: 10px solid $color-border;
+    position: absolute;
+    right: 0px;
+    top: 55px;
+    @include d(m) {
+      position: initial;
+      margin: 20px auto;
+    }
+  }
+  @include d(m) {
+    text-align: center;
+  }
+}
+

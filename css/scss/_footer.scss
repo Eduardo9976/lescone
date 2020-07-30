@@ -1,0 +1,19 @@
+footer {
+  margin-top: 60px;
+  padding: 20px 5px;
+  background: $cinza;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  @include box-shadow(0 0 0 10px $color-border);
+  p {
+    color: $color-background;
+    text-align: justify;
+  }
+  @include d(t) {
+    justify-content: center;
+  }
+  @include d(m) {
+    justify-content: center;
+  }
+}
